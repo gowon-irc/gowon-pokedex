@@ -3,7 +3,7 @@ COPY . /src
 WORKDIR /src
 RUN go build -o gowon-pokedex
 
-FROM alpine:3.14.3
+FROM alpine:3.15.0
 WORKDIR /app
 COPY --from=build-env /src/gowon-pokedex /app/
 ENTRYPOINT ["./gowon-pokedex"]
